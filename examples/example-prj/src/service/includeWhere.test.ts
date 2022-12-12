@@ -26,16 +26,16 @@ describe("Should include date type work arround", () => {
     const user = await prisma.user.findFirst({
       where: {
         createdAt: {
-          lt: new jestPrisma.Date(),
-          gte: new jestPrisma.Date(new jestPrisma.Date().getTime() - 1000 * 60 * 60 * 24),
+          lt: new Date(),
+          gte: new Date(new Date().getTime() - 1000 * 60 * 60 * 24),
         },
       },
       include: {
         posts: {
           where: {
             createdAt: {
-              lt: new jestPrisma.Date(),
-              gte: new jestPrisma.Date(new jestPrisma.Date().getTime() - 1000 * 60 * 60 * 24),
+              lt: new Date(),
+              gte: new Date(new Date().getTime() - 1000 * 60 * 60 * 24),
             },
           },
         },
@@ -47,8 +47,8 @@ describe("Should include date type work arround", () => {
         where: {
           author: {
             createdAt: {
-              lt: new jestPrisma.Date(),
-              gte: new jestPrisma.Date(new jestPrisma.Date().getTime() - 1000 * 60 * 60 * 24),
+              lt: new Date(),
+              gte: new Date(new Date().getTime() - 1000 * 60 * 60 * 24),
             },
           },
         },
@@ -58,8 +58,8 @@ describe("Should include date type work arround", () => {
               posts: {
                 where: {
                   createdAt: {
-                    lt: new jestPrisma.Date(),
-                    gte: new jestPrisma.Date(new jestPrisma.Date().getTime() - 1000 * 60 * 60 * 24),
+                    lt: new Date(),
+                    gte: new Date(new Date().getTime() - 1000 * 60 * 60 * 24),
                   },
                 },
               },

@@ -10,11 +10,12 @@
     "test:ci": "DATABASE_URL=\"file:./test.db\" jest"
   },
   "devDependencies": {
-    "@quramy/jest-prisma": "*",
     "@prisma/client": "*",
+    "@quramy/jest-prisma": "*",
     "@types/jest": "29.2.1",
-    "prisma": "*",
     "jest": "29.2.2",
+    "jest-environment-node-single-context": "^29.0.0",
+    "prisma": "*",
     "ts-jest": "29.0.3"
   },
   "dependencies": {
